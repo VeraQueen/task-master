@@ -1,0 +1,21 @@
+<div class="container">
+  <h3 class="py-2 rounded text-center shadow-sm">Done</h3>
+  <ul class="list-group list-group-flush mb-4">
+    <li
+      class="list-group-item d-flex justify-content-between align-items-center text-wrap text-break fs-5"
+      *ngFor="let task of tasks; let i = index"
+    >
+      {{ task }}
+      <div class="icons-container d-flex gap-3 ms-3">
+        <i (click)="onRecycle(i)" class="bi bi-recycle" role="button"></i>
+        <i
+          (mouseenter)="onMouseEnterDelete($event)"
+          (mouseleave)="onMouseLeaveDelete($event)"
+          (click)="onDelete(i)"
+          class="bi bi-x-circle"
+          role="button"
+        ></i>
+      </div>
+    </li>
+  </ul>
+</div>

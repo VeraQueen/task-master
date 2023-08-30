@@ -1,0 +1,32 @@
+.bi {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  padding: 1em;
+}
+
+.list-group-item {
+  border: none;
+  margin: 1px 0;
+}
+
+.bi-recycle {
+  background-color: #e7f5ff;
+  color: #1864ab;
+}
+
+.bi-x-circle {
+  background-color: #ffe3e3;
+  color: #8d1d1d;
+}
+
+.bi-x-circle-fill {
+  color: #d83838;
+}
+
+h3 {
+  background-color: #fff;
+}

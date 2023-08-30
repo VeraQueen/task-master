@@ -1,0 +1,51 @@
+.bi {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  padding: 1em;
+}
+
+.list-group-item {
+  border: none;
+  margin: 1px 0;
+}
+
+.bi-star {
+  background-color: #fff9db;
+  color: #fcc419;
+}
+
+.bi-star-fill {
+  color: #fcc419;
+}
+
+.bi-check {
+  background-color: #ebfbee;
+  color: #2b8a3e;
+}
+
+.mark-done-background {
+  background-color: #ebfbee;
+  outline: 1px solid #2b8a3e;
+}
+
+.mark-done-background .bi-check-all {
+  background-color: transparent;
+  color: #2b8a3e;
+}
+
+.bi-x-circle {
+  background-color: #ffe3e3;
+  color: #8d1d1d;
+}
+
+.bi-x-circle-fill {
+  color: #d83838;
+}
+
+h3 {
+  background-color: #fff;
+}

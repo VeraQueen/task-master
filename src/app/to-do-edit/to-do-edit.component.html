@@ -1,0 +1,22 @@
+<form class="form-floating mb-3 shadow-sm">
+  <input
+    type="text"
+    class="form-control border-0 fs-5"
+    id="task-input"
+    placeholder="clean the room"
+    value="clean the room"
+    (keyup.enter)="onKeyEnterAddTask(inputTask)"
+    #inputTask
+  />
+  <label for="task-input">Input the task</label>
+</form>
+
+<div class="d-grid col-6 mx-auto mb-5">
+  <button
+    type="submit"
+    class="btn btn-dark text-nowrap shadow fs-5"
+    (click)="onClickAddTask(inputTask)"
+  >
+    Add to the list
+  </button>
+</div>
