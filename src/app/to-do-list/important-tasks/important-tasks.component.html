@@ -2,6 +2,12 @@
   <h2 class="py-2 rounded text-center shadow-sm bg-white">Important</h2>
   <ul class="list-group list-group-flush mb-4">
     <li
+      *ngIf="tasks.length === 0"
+      class="list-group-item rounded fs-6 text-muted text-center bg-light"
+    >
+      add a task
+    </li>
+    <li
       class="list-group-item d-flex justify-content-between align-items-center text-wrap text-break fs-5"
       *ngFor="let task of tasks; let i = index"
     >

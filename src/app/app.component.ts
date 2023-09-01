@@ -11,6 +11,8 @@ export class AppComponent implements OnInit {
   toDoTasksStorage: string[] = [];
   importantTasksStorage: string[] = [];
   doneTasksStorage: string[] = [];
+  changesSaved = false;
+  deletedAll = false;
 
   constructor(
     private tasksService: TasksService,
@@ -61,10 +63,18 @@ export class AppComponent implements OnInit {
         JSON.stringify(this.tasksService.doneTasks)
       );
     }
+    this.changesSaved = true;
+    setTimeout(() => {
+      this.changesSaved = !this.changesSaved;
+    }, 2000);
   }
 
   onClickDeleteAll() {
     this.localService.clearData();
     this.tasksService.deleteAll();
+    this.deletedAll = true;
+    setTimeout(() => {
+      this.deletedAll = !this.deletedAll;
+    }, 2000);
   }
 }
