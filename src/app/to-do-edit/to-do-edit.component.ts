@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TasksService } from '../tasks.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-to-do-edit',
@@ -9,15 +10,14 @@ import { TasksService } from '../tasks.service';
 export class ToDoEditComponent {
   constructor(private tasksService: TasksService) {}
 
-  onClickAddTask(inputTask: HTMLInputElement) {
-    if (inputTask.value === '') alert('Please write a task 📝');
-    else this.tasksService.addTasks(inputTask.value);
-    inputTask.value = '';
+  onSubmit(taskForm: NgForm) {
+    this.tasksService.addTasks(taskForm.value.task);
+    taskForm.reset();
   }
 
-  onKeyEnterAddTask(inputTask: HTMLInputElement) {
-    if (inputTask.value === '') alert('Please write a task 📝');
-    else this.tasksService.addTasks(inputTask.value);
-    inputTask.value = '';
-  }
+  // onKeyEnterAddTask(inputTask: HTMLInputElement) {
+  //   if (inputTask.value === '') alert('Please write a task 📝');
+  //   else this.tasksService.addTasks(inputTask.value);
+  //   inputTask.value = '';
+  // }
 }
