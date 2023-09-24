@@ -40,6 +40,15 @@ export class ToDoEditComponent implements OnInit, OnDestroy {
     this.editMode = false;
   }
 
+  onClickCancel() {
+    if (this.editMode) {
+      this.editMode = false;
+      this.taskForm.reset();
+    } else {
+      this.taskForm.reset();
+    }
+  }
+
   ngOnDestroy(): void {
     this.editingSubscription.unsubscribe();
   }

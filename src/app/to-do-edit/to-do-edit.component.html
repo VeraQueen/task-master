@@ -18,14 +18,30 @@
       !taskForm.valid && taskForm.touched ? "Required field" : "Input task"
     }}</label>
   </form>
-  <div class="d-grid col-6 mx-auto mb-5">
-    <button
-      type="submit"
-      class="btn btn-dark shadow fs-5"
-      form="form"
-      [disabled]="!taskForm.valid"
-    >
-      {{ editMode ? "Update" : "Add" }}
-    </button>
+
+  <div class="container mb-5">
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <button
+          type="submit"
+          class="btn btn-dark shadow fs-5 w-100 justify-self-center"
+          form="form"
+          [disabled]="!taskForm.valid"
+        >
+          {{ editMode ? "Update" : "Add" }}
+        </button>
+      </div>
+      <div class="col-auto">
+        <button
+          type="button"
+          class="btn border-secondary shadow-sm"
+          form="form"
+          [disabled]="!taskForm.valid"
+          (click)="onClickCancel()"
+        >
+          <i class="bi bi-x-lg fs-5"></i>
+        </button>
+      </div>
+    </div>
   </div>
 </div>
