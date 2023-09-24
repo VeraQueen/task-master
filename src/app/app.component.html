@@ -18,18 +18,27 @@
     </div>
   </div>
 </div>
-<div class="container-sm d-grid justify-content-center">
-  <p class="text-center text-muted" *ngIf="changesSaved">Saved!</p>
-  <p class="text-center text-muted" *ngIf="deletedAll">Deleted!</p>
-</div>
-<div class="container d-flex gap-2 justify-content-center mt-2">
-  <button class="btn btn-dark shadow" (click)="onClickSave()">
-    Save changes
-  </button>
-  <button class="btn btn-danger shadow" (click)="onClickDeleteAll()">
-    Delete all
+
+<div class="d-grid col-md-3 col-5 mx-auto mb-2">
+  <button
+    class="btn shadow"
+    (click)="onClickSave()"
+    [ngClass]="{ 'btn-success': changesSaved, 'btn-dark': !changesSaved }"
+  >
+    {{ changesSaved ? "Saved" : "Save changes" }}
   </button>
 </div>
+
+<div class="d-grid col-md-3 col-5 mx-auto">
+  <button
+    class="btn shadow"
+    (click)="onClickDeleteAll()"
+    [ngClass]="{ 'btn-success': deletedAll, 'btn-danger': !deletedAll }"
+  >
+    {{ deletedAll ? "Deleted" : "Delete all" }}
+  </button>
+</div>
+
 <footer class="container mx-auto">
   <app-footer></app-footer>
 </footer>
