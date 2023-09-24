@@ -14,10 +14,4 @@ export class ToDoEditComponent {
     this.tasksService.addTasks(taskForm.value.task);
     taskForm.reset();
   }
-
-  // onKeyEnterAddTask(inputTask: HTMLInputElement) {
-  //   if (inputTask.value === '') alert('Please write a task 📝');
-  //   else this.tasksService.addTasks(inputTask.value);
-  //   inputTask.value = '';
-  // }
 }

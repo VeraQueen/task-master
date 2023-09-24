@@ -14,10 +14,17 @@
       name="task"
       required
     />
-    <label for="task-input">Input the task</label>
+    <label for="task-input">{{
+      !taskForm.valid && taskForm.touched ? "Required field" : "Input task"
+    }}</label>
   </form>
   <div class="d-grid col-6 mx-auto mb-5">
-    <button type="submit" class="btn btn-dark shadow fs-5" form="form">
+    <button
+      type="submit"
+      class="btn btn-dark shadow fs-5"
+      form="form"
+      [disabled]="!taskForm.valid"
+    >
       Add
     </button>
   </div>
