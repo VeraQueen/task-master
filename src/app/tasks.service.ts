@@ -1,4 +1,8 @@
+import { Subject } from 'rxjs';
+
 export class TasksService {
+  startedEditing = new Subject<number>();
+
   toDoTasks: string[];
   importantTasks: string[];
   doneTasks: string[];
@@ -48,5 +52,13 @@ export class TasksService {
     this.toDoTasks.splice(0);
     this.importantTasks.splice(0);
     this.doneTasks.splice(0);
+  }
+
+  getToDoTask(id: number) {
+    return this.toDoTasks[id];
+  }
+
+  updateToDoTask(id: number, newTask: string) {
+    this.toDoTasks.splice(id, 1, newTask);
   }
 }

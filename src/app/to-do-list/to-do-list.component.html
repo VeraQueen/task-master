@@ -10,6 +10,8 @@
     <li
       class="list-group-item rounded d-flex justify-content-between align-items-center text-wrap text-break fs-5"
       *ngFor="let task of tasks; let i = index"
+      (click)="onEditTask(i)"
+      role="button"
     >
       {{ task }}
       <div class="icons-container d-flex gap-3 ms-3">

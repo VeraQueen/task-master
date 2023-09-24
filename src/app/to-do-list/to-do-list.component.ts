@@ -62,4 +62,8 @@ export class ToDoAppComponent implements OnInit, OnChanges {
   onMouseEnterDelete(event: Event) {
     this.hoverService.onHoverDelete(event);
   }
+
+  onEditTask(id: number) {
+    this.tasksService.startedEditing.next(id);
+  }
 }
